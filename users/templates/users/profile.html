@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ user.profile.image_profile.url }}
+<img src="{{ user.profile.image_profile.url }}" alt="saqer">
+<div>
+    <a class="btn" href="{% url 'profile_update' %}">تحرير</a>
+
+<br><br>
+
+    <a class="btn" href="{% url 'profile_delete' user.id %}">delete</a>
+    <br><br>
+    <a class="btn" href="{% url 'image_delete'%}">delete image</a>
+    <br><br>
+    <a class="btn" href="{% url 'edit_profile'%}">edite passoword</a>
+
+</div>
+<div>
+    <h2>{{ user.username }}</h2>
+    <p>name <span> {{ user.first_name }} {{ user.last_name }}</span></p>
+    <p>email <span> {{ user.email }}</span></p>
+
+
+
+</div>
+</body>
+</html>

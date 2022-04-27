@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    {{ prod.user.username }}
+</h1>
+<h1>{{ prod.title }}</h1>
+<h2>{{ prod.details }}</h2>
+<h3>{{ prod.amount }}</h3>
+<h4>{{ prod.price }}</h4>
+<hr>
+{% for c in comment %}
+<h1>{{ c.user.username }}</h1>
+<p>{{ c.txt }}</p>
+{% endfor %}
+<hr>
+<form method="POST">
+    {% csrf_token %}
+    {{ commint_form }}
+    <input type="submit">
+</form>
+</body>
+</html>
